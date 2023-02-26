@@ -1,0 +1,191 @@
+[
+  {
+    "grupo": 3,
+    "ID": 334,
+    "nombre": "Aguilar,Maria",
+    "notas": [
+      5,
+      5
+    ]
+  },
+  {
+    "grupo": 5,
+    "ID": 444,
+    "nombre": "Rogdiguez, Jose",
+    "notas": [
+      4,
+      3
+    ]
+  },
+  {
+    "grupo": 6,
+    "ID": 111,
+    "nombre": "Blanco, Alexandra",
+    "notas": [
+      3,
+      4
+    ]
+  },
+  {
+    "grupo": 3,
+    "ID": 123,
+    "nombre": "Bolivar, Elizabeth",
+    "notas": [
+      2.5,
+      5
+    ]
+  },
+  {
+    "grupo": 6,
+    "ID": 102,
+    "nombre": "Burgos,Daniel",
+    "notas": [
+      5,
+      5
+    ]
+  },
+  {
+    "grupo": 5,
+    "ID": 400,
+    "nombre": "Castro, Gladys",
+    "notas": [
+      4,
+      4
+    ]
+  },
+  {
+    "grupo": 4,
+    "ID": 241,
+    "nombre": "Rincon, Juan",
+    "notas": [
+      2,
+      4
+    ]
+  },
+  {
+    "grupo": 8,
+    "ID": 231,
+    "nombre": "Herrera, Carolina",
+    "notas": [
+      2,
+      2
+    ]
+  },
+  {
+    "grupo": 1,
+    "ID": 222,
+    "nombre": "Dominguez, Marianna",
+    "notas": [
+      2.9,
+      5
+    ]
+  },
+  {
+    "grupo": 7,
+    "ID": 456,
+    "nombre": "Morales, Santiago ",
+    "notas": [
+      3.4,
+      4.1
+    ]
+  },
+  {
+    "grupo": 6,
+    "ID": 665,
+    "nombre": "Marrero, Alejandro",
+    "notas": [
+      3.4,
+      4.1
+    ]
+  },
+  {
+    "grupo": 7,
+    "ID": 126,
+    "nombre": "Meneses, Enrique",
+    "notas": [
+      5,
+      4.7
+    ]
+  },
+  {
+    "grupo": 8,
+    "ID": 870,
+    "nombre": "Rodriguez,Andres",
+    "notas": [
+      5,
+      4.8
+    ]
+  },
+  {
+    "grupo": 3,
+    "ID": 45,
+    "nombre": "Sanchez,Liliana",
+    "notas": [
+      4,
+      5
+    ]
+  },
+  {
+    "grupo": 2,
+    "ID": 2,
+    "nombre": "Soto, Diego ",
+    "notas": [
+      4,
+      3.8
+    ]
+  },
+  {
+    "grupo": 4,
+    "ID": 887,
+    "nombre": "Tineo, Luca",
+    "notas": [
+      3,
+      3.8
+    ]
+  },
+  {
+    "grupo": 4,
+    "ID": 665,
+    "nombre": "Rosales,Juan Daniel",
+    "notas": [
+      3.8,
+      4.8
+    ]
+  },
+  {
+    "grupo": 2,
+    "ID": 889,
+    "nombre": "VARGAS, Teresa ",
+    "notas": [
+      3.8,
+      4.7
+    ]
+  },
+  {
+    "grupo": 8,
+    "ID": 990,
+    "nombre": "Vasquez Sanchez,Santiago",
+    "notas": [
+      4.8,
+      4.5
+    ]
+  },
+  {
+    "grupo": 2,
+    "ID": 997,
+    "nombre": "Vera, Lilia ",
+    "notas": [
+      4.7,
+      5
+    ]
+  },
+  {
+    "grupo": 7,
+    "ID": 995,
+    "nombre": "Cabrales, Elisa",
+    "notas": [
+      4.5,
+      5
+    ]
+  }
+]

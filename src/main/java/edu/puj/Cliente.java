@@ -3,34 +3,49 @@ package edu.puj;
 import java.rmi.Naming;
 import java.rmi.RemoteException;
 import java.util.List;
+import java.util.Objects;
 import java.util.Scanner;
 
+/**
+ * Clase Main para el programa del Cliente
+ */
 public class Cliente {
 
-    static boolean retry = false;
+    static boolean retry = true;
     static ServicioEstudianteInterface servicioEstudiante;
 
     public static void main(String[] args) throws InterruptedException {
-        do {
+
+        // Intentar conexión con el servidor
+        while (true) {
             if (args.length == 0) {
                 System.err.println("Debe especificar la IP del servidor y su puerto...");
                 System.exit(1);
             }
             System.out.println("Conectándose al servidor: " + args[0]);
 
+            // Inicializar el servicio de estudiante
             try {
                 servicioEstudiante = (ServicioEstudianteInterface) Naming.lookup("rmi://" + args[0] + "/ServicioEstudiante");
             } catch (Exception e) {
                 System.err.println("Error de conexión con el Servidor!");
                 Thread.sleep(5000);
-                retry = !retry;
-                continue;
+
+                if (!retry) {
+                    System.err.println("No se ha podido establecer conexión con el servidor");
+                    System.exit(1);
+                } else {
+                    retry = false;
+                    continue;
+                }
             }
 
+            System.out.println("Conexión exitosa!\n");
             break;
-        } while (retry);
+        }
 
 
+        // Mostrar el menú
         var scanner = new Scanner(System.in);
         int opcion = 0;
         int idBusqueda = 0;
@@ -52,14 +67,14 @@ public class Cliente {
                         System.out.print("Digite un ID: ");
                         idBusqueda = scanner.nextInt();
                         var estudiante = servicioEstudiante.getNombreById(idBusqueda);
-                        System.out.println("Estudiante: " + estudiante);
+                        System.out.println("Estudiante: " + Objects.requireNonNullElse(estudiante, "No existe estudiante con el ID indicado"));
                         break;
 
                     case 2:
                         System.out.print("Digite un ID: ");
                         idBusqueda = scanner.nextInt();
                         notas = servicioEstudiante.getNotasById(idBusqueda);
-                        System.out.println("Notas: " + notas);
+                        System.out.println("Notas: " + Objects.requireNonNullElse(notas, "No existe un estudiante con el ID indicado"));
                         break;
 
                     case 3:
@@ -67,7 +82,7 @@ public class Cliente {
                         String nombreBusqueda = scanner.next();
                         System.out.println("Nombre a buscar: " + nombreBusqueda);
                         notas = servicioEstudiante.getNotasByName(nombreBusqueda);
-                        System.out.println("Notas: " + notas);
+                        System.out.println("Notas: " + Objects.requireNonNullElse(notas, "No existe un estudiante con el nombre indicado"));
                         break;
 
                     case 4:
@@ -75,7 +90,7 @@ public class Cliente {
                         idBusqueda = scanner.nextInt();
 
                         var grupo = servicioEstudiante.getGrupoById(idBusqueda);
-                        System.out.println("Grupo: " + grupo);
+                        System.out.println("Grupo: " + Objects.requireNonNullElse(grupo, "No existe un estudiante con el ID indicado"));
 
                         break;
 
@@ -85,7 +100,11 @@ public class Cliente {
 
                         var estudiantes = servicioEstudiante.getEstudiantesByGroupId(idBusqueda);
                         System.out.println("Estudiantes: ");
-                        estudiantes.forEach(System.out::println);
+
+                        if (estudiantes != null)
+                            estudiantes.forEach(System.out::println);
+                        else
+                            System.out.println("No existe el grupo especificado");
 
                         break;
 

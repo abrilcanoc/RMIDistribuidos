@@ -8,11 +8,21 @@ import java.rmi.server.UnicastRemoteObject;
 import java.util.List;
 import java.util.ArrayList;
 
+/**
+ * Clase que implementa el Servidor para proveer el servicio de estudiantes
+ */
 public class ServicioEstudianteImpl extends UnicastRemoteObject implements ServicioEstudianteInterface {
 
-    private EstudiantesDatabase estudiantes;
+    private final EstudiantesDatabase estudiantes;
 
-    public ServicioEstudianteImpl(EstudiantesDatabase database) throws Exception {
+    /**
+     * Crea el servicio de estudiantes con la base de datos de estudiantes
+     *
+     * @param database Base de datos de estudiantes
+     * @throws RemoteException Error en java.rmi
+     * @see edu.puj.EstudiantesDatabase
+     */
+    public ServicioEstudianteImpl(EstudiantesDatabase database) throws RemoteException {
         super();
         this.estudiantes = database;
     }
@@ -56,6 +66,9 @@ public class ServicioEstudianteImpl extends UnicastRemoteObject implements Servi
                 integrantes.add(i);
             }
         }
+
+        if (integrantes.isEmpty())
+            return null;
         return integrantes;
     }
 
